@@ -44,14 +44,36 @@ flowchart LR
 
 ---
 
+## Operator Dashboard Showcase
+
+### Live Screenshots
+
+| Desk View | Pipeline Health Topology | Alerts & Filtering |
+|---|---|---|
+| ![Delta Desk](docs/images/desk.png) | ![Pipeline Health Map](docs/images/health-map.png) | ![Alerts View](docs/images/alerts.png) |
+
+### Interactive Mock-Data Demo (`demo/`)
+
+A sanitized, **100% synthetic-data** interactive build of the dashboard is included in [demo/](demo/) so partners and evaluators can explore the UI locally or deploy it as a static site—without any backend APIs, execution venue guides, or proprietary logic:
+
+```bash
+cd demo
+npm install
+npm run dev
+```
+
+---
+
 ## What Is Included in This Showcase
 
 | Path | Description |
 |---|---|
+| [demo/](demo/) | Buildable, synthetic-data React/Vite interactive dashboard demo |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | System topology, 5-seat AI Boardroom design, hybrid retrieval, and reliability guarantees |
 | [docs/COST-REARCHITECTURE.md](docs/COST-REARCHITECTURE.md) | Breakdown of the ~$101–106k/mo → sub-$1k/mo Azure cost optimization |
+| [docs/images/](docs/images/) | Sanitized dashboard screenshots (`desk.png`, `health-map.png`, `alerts.png`) |
 | [preview/observability/](preview/observability/) | Sanitized non-core telemetry, Prometheus latency histograms, and daily token-budget utilities |
-| [preview/ui/](preview/ui/) | Non-runnable React UI primitives and dashboard view previews (`Desk`, `Health`, `Alerts`, `Security`) |
+| [preview/ui/](preview/ui/) | Non-runnable React UI primitives and view previews (`Desk`, `Health`, `Alerts`, `Security`) |
 | [SECURITY.md](SECURITY.md) | Security architecture posture and disclosure policy |
 | [LICENSE](LICENSE) | Proprietary All-Rights-Reserved license |
 
