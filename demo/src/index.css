@@ -1,0 +1,32 @@
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/500.css';
+@import '@fontsource/dm-sans/600.css';
+@import '@fontsource/dm-mono/400.css';
+@import '@fontsource/dm-mono/500.css';
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    background-color: rgb(var(--surface-0));
+    color: rgb(var(--text-1));
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+.num {
+  font-family: 'DM Mono', ui-monospace, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-size: 11px;
+  color: rgb(var(--text-3));
+  letter-spacing: 0.02em;
+}
