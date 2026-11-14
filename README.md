@@ -48,9 +48,8 @@ flowchart LR
 
 For investor, partnership, licensing, or live production walkthrough inquiries:
 
-- **Email:** `<your-email@domain.com>`
-- **LinkedIn / Profile:** `<https://linkedin.com/in/your-profile>`
-- **Website:** `<https://your-domain.com>`
+- **Email:** [dam.ladipo@gmail.com](mailto:dam.ladipo@gmail.com)
+- **LinkedIn:** [linkedin.com/in/oluwadamilare-ladipo](https://www.linkedin.com/in/oluwadamilare-ladipo)
 
 ---
 
