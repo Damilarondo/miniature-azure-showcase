@@ -17,7 +17,7 @@
 
 ## Interactive Demo (100% Synthetic Data)
 
-Once GitHub Pages is enabled (*Settings → Pages → Source: GitHub Actions*), the sanitized interactive dashboard auto-deploys from [`demo/`](demo/).
+**[Launch Live Interactive Demo](https://damilarondo.github.io/miniature-azure-showcase/)** — deployed from [`demo/`](demo/) with 100% synthetic data.
 
 Run locally in 30 seconds:
 
