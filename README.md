@@ -1,28 +1,55 @@
-# Project Delta — Miniature Azure Re-Architecture (Showcase)
+# Project Delta — $105k/mo → <$1k/mo Azure AI Re-Architecture
 
-> **Notice — Showcase & Demo Only:** This public repository is a **demo and architectural showcase** for investors, partners, and clients. **The real, complete production system and full private codebase exist in a separate private repository** (with live screenshots from the deployed environment shown below). Core application logic, ingestion adapters, scoring engines, prompt templates, database schemas, and Infrastructure-as-Code (Bicep) templates are intentionally omitted here to protect intellectual property. Live walkthroughs of the production system are available upon request. See [LICENSE](LICENSE) and [AGENTS.md](AGENTS.md).
+**How we cut a 38-service Azure AI & market-intelligence platform by >99% (~$101k–$106k/mo down to <$1k/mo) while preserving all 18 ingest adapters, a 5-seat AI Boardroom, row-level security, and zero external LLM egress.**
 
----
+![Cloud Cost](https://img.shields.io/badge/Azure_Spend-%3E99%25_Reduction-FFA62B?style=flat-square)
+![Services](https://img.shields.io/badge/Services-38%2F38_Preserved-3FD07F?style=flat-square)
+![Boardroom](https://img.shields.io/badge/AI_Boardroom-5_Seats-FFA62B?style=flat-square)
+![License](https://img.shields.io/badge/License-All_Rights_Reserved-2E2E2E?style=flat-square)
 
-## Executive Overview
-
-**Project Delta** is a multi-agent market intelligence and decision-support platform powered by a **5-seat AI Boardroom**, 18 automated ingest adapters, hybrid vector/graph/time-series retrieval, and real-time alerting.
-
-This showcase documents the **Miniature Azure Re-Architecture**: a ground-up infrastructure redesign that reduced projected Azure cloud spend by **over 99%—from ~$101,000–$106,000/month down to under $1,000/month**—while preserving all ~38 microservices, all 18 ingest adapters, row-level security, 7-year WORM audit retention, and zero external LLM egress.
-
-### Key Highlights
-
-| Pillar | Outcome |
+| Live Production Desk | 38-Service Pipeline Topology |
 |---|---|
-| **Multi-Agent AI Boardroom** | 5 specialized AI seats (*Quant, Lawyer, Skeptic, Historian, Judge*) deliberating across structured rounds with dynamic fallback routing |
-| **>99% Cloud Cost Reduction** | Consolidated an over-provisioned multi-region AKS + Managed PaaS estate (~$101–106k/mo) into a single-host `Standard_E8ps_v6` topology + serverless event jobs (<$1k/mo) |
-| **Zero-Egress Security** | All LLM inference routed strictly through Azure AI Foundry via Managed Identity, plus local in-container BGE-M3 embedding & reranking |
-| **Enterprise Compliance** | PostgreSQL Row-Level Security (RLS), Azure Key Vault Standard, and 7-year immutable WORM audit storage |
-| **Observability & Cost Controls** | Sub-budget latency histograms (RAG, Round 1, Round 2, Judge) and automated daily token-budget caps |
+| ![Delta Desk](docs/images/desk.png) | ![Pipeline Health Map](docs/images/health-map.png) |
+
+> **Showcase & Demo Only:** This public repository is a **demo and architectural showcase** for investors, partners, and clients. **The real, complete production system and full private codebase exist in a separate private repository** (screenshots above are from the live deployed environment). Core application logic, ingestion adapters, scoring engines, prompt templates, SQL schemas, and Bicep IaC templates are intentionally omitted to protect intellectual property. See [LICENSE](LICENSE) and [AGENTS.md](AGENTS.md).
 
 ---
 
-## High-Level System Architecture
+## Interactive Demo (100% Synthetic Data)
+
+Once GitHub Pages is enabled (*Settings → Pages → Source: GitHub Actions*), the sanitized interactive dashboard auto-deploys from [`demo/`](demo/).
+
+Run locally in 30 seconds:
+
+```bash
+cd demo
+npm install
+npm run dev
+```
+
+<details>
+<summary>Additional Screenshot: Alerts & Filtering View</summary>
+
+![Alerts View](docs/images/alerts.png)
+
+</details>
+
+---
+
+## The >99% Azure Cost Re-Architecture
+
+The legacy enterprise Bicep estate provisioned multi-region, high-availability PaaS services (~$101k–$106k/mo) for a workload whose 38-service stack already runs cleanly on a single machine.
+
+| Architecture | Monthly Azure Spend | Key Components |
+|---|---:|---|
+| **Legacy Enterprise Estate** | **~$101,000–$106,000/mo** | Event Hubs Dedicated (~$65k), 3× PG Flexible HA (~$12k), Managed Redis X150 (~$9k), 4× AKS Pools (~$6k), Memgraph HA (~$3k), Firewall/WAF/AppGW (~$3k), Geo-DR & HSM (~$3k) |
+| **Re-Architected Stack** | **<$1,000/mo** | Single `Standard_E8ps_v6` compose host + Azure AI Foundry + ACR Basic ($5.07) + Key Vault Standard (~$1) + Static Web Apps ($0) + 4× Consumption Jobs (~$2) + 7-Yr WORM Blob (~$7.50) |
+
+*Full breakdown and why serverless-per-service (~$592/mo) was rejected:* [docs/COST-REARCHITECTURE.md](docs/COST-REARCHITECTURE.md)
+
+---
+
+## System Architecture
 
 ```mermaid
 flowchart LR
@@ -42,6 +69,10 @@ flowchart LR
     Core --> Audit["Azure Blob (7-Yr WORM Audit)"]
 ```
 
+- **5-Seat AI Boardroom:** *Quant, Lawyer, Skeptic, Historian, and Judge* deliberate across structured rounds with dynamic provider/model fallback and strict p95 latency sub-budgets (`15s` total).
+- **Zero External LLM Egress:** Inference routes exclusively through Azure AI Foundry via Managed Identity, paired with local in-container BGE-M3 embeddings and reranking.
+- **Enterprise Compliance:** PostgreSQL Row-Level Security (RLS), fail-closed retrieval, and 7-year immutable WORM audit storage.
+
 ---
 
 ## Contact & Live Walkthroughs
@@ -53,37 +84,15 @@ For investor, partnership, licensing, or live production walkthrough inquiries:
 
 ---
 
-## Operator Dashboard Showcase
-
-### Live Screenshots
-
-| Desk View | Pipeline Health Topology | Alerts & Filtering |
-|---|---|---|
-| ![Delta Desk](docs/images/desk.png) | ![Pipeline Health Map](docs/images/health-map.png) | ![Alerts View](docs/images/alerts.png) |
-
-### Interactive Mock-Data Demo (`demo/`)
-
-A sanitized, **100% synthetic-data** interactive build of the dashboard is included in [demo/](demo/) so partners and evaluators can explore the UI locally or deploy it as a static site—without any backend APIs, execution venue guides, or proprietary logic:
-
-```bash
-cd demo
-npm install
-npm run dev
-```
-
----
-
-## What Is Included in This Showcase
+## Repository Map
 
 | Path | Description |
 |---|---|
 | [demo/](demo/) | Buildable, synthetic-data React/Vite interactive dashboard demo |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | System topology, 5-seat AI Boardroom design, hybrid retrieval, and reliability guarantees |
-| [docs/COST-REARCHITECTURE.md](docs/COST-REARCHITECTURE.md) | Breakdown of the ~$101–106k/mo → sub-$1k/mo Azure cost optimization |
-| [docs/images/](docs/images/) | Sanitized dashboard screenshots (`desk.png`, `health-map.png`, `alerts.png`) |
-| [preview/observability/](preview/observability/) | Sanitized non-core telemetry, Prometheus latency histograms, and daily token-budget utilities |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | 5-seat Boardroom design, hybrid retrieval, and reliability guarantees |
+| [docs/COST-REARCHITECTURE.md](docs/COST-REARCHITECTURE.md) | Detailed breakdown of the ~$101–106k/mo → sub-$1k/mo optimization |
+| [docs/images/](docs/images/) | Sanitized production dashboard screenshots (`desk.png`, `health-map.png`, `alerts.png`) |
+| [preview/observability/](preview/observability/) | Sanitized non-core Prometheus latency histograms and token-budget utilities |
 | [preview/ui/](preview/ui/) | Non-runnable React UI primitives and view previews (`Desk`, `Health`, `Alerts`, `Security`) |
-| [SECURITY.md](SECURITY.md) | Security architecture posture and disclosure policy |
+| [SECURITY.md](SECURITY.md) | Security posture and private vulnerability disclosure policy |
 | [LICENSE](LICENSE) | Proprietary All-Rights-Reserved license |
-
-*Omitted by design:* Core pipeline microservices, proprietary prompts, scoring/risk engines, SQL migrations, `.env` configurations, Dockerfiles, and Azure Bicep IaC templates.
