@@ -1,6 +1,6 @@
 # Project Delta — Miniature Azure Re-Architecture (Showcase)
 
-> **Notice:** This repository is a **proprietary architectural showcase** for investors, partners, and clients. Core application logic, ingestion adapters, scoring engines, prompt templates, database schemas, and Infrastructure-as-Code (Bicep) templates are intentionally omitted to protect intellectual property. See [LICENSE](LICENSE) and [AGENTS.md](AGENTS.md).
+> **Notice — Showcase & Demo Only:** This public repository is a **demo and architectural showcase** for investors, partners, and clients. **The real, complete production system and full private codebase exist in a separate private repository** (with live screenshots from the deployed environment shown below). Core application logic, ingestion adapters, scoring engines, prompt templates, database schemas, and Infrastructure-as-Code (Bicep) templates are intentionally omitted here to protect intellectual property. Live walkthroughs of the production system are available upon request. See [LICENSE](LICENSE) and [AGENTS.md](AGENTS.md).
 
 ---
 
