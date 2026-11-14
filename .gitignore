@@ -1,0 +1,28 @@
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.secret
+secrets.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
