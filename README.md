@@ -1,8 +1,9 @@
 # Project Delta — Institutional AI Market Intelligence at <$1k/mo Cloud Cost
 
-**Project Delta** is an institutional-grade, multi-agent market intelligence and decision-support platform. By combining **18 automated data feeds**, **hybrid vector/graph retrieval**, and a **5-seat AI Boardroom** (*Quant, Lawyer, Skeptic, Historian, Judge*), it turns raw filings, news, and market events into audited, high-conviction calls—while operating at **>99% lower cloud cost** than comparable enterprise AI stacks.
+**Project Delta** is an institutional-grade, multi-agent market intelligence and decision-support platform. By combining **18 automated data feeds**, **hybrid vector/graph retrieval**, and a **5-seat AI Boardroom** (*Quant, Lawyer, Skeptic, Historian, Judge*), it delivers audited, high-conviction alerts in **under 15 seconds end-to-end**—while operating at **>99% lower cloud cost** than comparable enterprise AI stacks.
 
 ![Cloud Cost](https://img.shields.io/badge/Infrastructure_Cost-%3C%241%2C000%2Fmo-3FD07F?style=flat-square)
+![Time to Alert](https://img.shields.io/badge/Time_to_Alert-%3C15s_Boardroom_SLA-FFA62B?style=flat-square)
 ![Unit Economics](https://img.shields.io/badge/Cloud_Savings-%3E99%25_vs_Legacy-FFA62B?style=flat-square)
 ![Boardroom](https://img.shields.io/badge/AI_Boardroom-5_Independent_Seats-FFA62B?style=flat-square)
 ![IP](https://img.shields.io/badge/Core_IP-Private_Production_Repo-2E2E2E?style=flat-square)
@@ -19,8 +20,8 @@
 
 ## Why Project Delta Wins
 
-### 1. Multi-Agent Conviction Over Single-LLM Hallucination
-Most AI market tools rely on a single prompt and a single model. Project Delta routes every signal through a structured **5-Seat AI Boardroom**—**Quant, Lawyer, Skeptic, Historian, and Judge**—forcing adversarial cross-examination across quantitative drift, source-rights/compliance, downside risk, and historical precedent before a decision reaches the operator or execution layer.
+### 1. Sub-15-Second Time-to-Alert With Multi-Agent Conviction
+Most AI market tools either trade speed for accuracy (single-LLM hallucinations) or accuracy for speed (minutes-long agent chains). Project Delta routes every signal through a structured **5-Seat AI Boardroom**—**Quant, Lawyer, Skeptic, Historian, and Judge**—enforcing strict p95 latency sub-budgets (`500 ms` hybrid RAG → `6.0 s` Round 1 → `5.0 s` Round 2 → `3.0 s` Judge synthesis) to deliver cross-examined alerts in **under 15 seconds end-to-end**.
 
 ### 2. Capital-Efficient Unit Economics (>$100k/mo Saved)
 Traditional enterprise cloud architectures burn six figures a month before product-market fit. Project Delta's re-architected Azure topology delivers **all 38 microservices and 18 ingest adapters for under $1,000/month**, protecting gross margins and extending runway without sacrificing institutional security.
