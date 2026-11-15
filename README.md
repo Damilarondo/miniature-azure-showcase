@@ -1,9 +1,9 @@
 # Project Delta — Institutional AI Market Intelligence at <$1k/mo Cloud Cost
 
-**Project Delta** is an institutional-grade, multi-agent market intelligence and decision-support platform. By combining **18 automated data feeds**, **hybrid vector/graph retrieval**, and a **5-seat AI Boardroom** (*Quant, Lawyer, Skeptic, Historian, Judge*), it delivers audited, high-conviction alerts in **under 15 seconds end-to-end**—while operating at **>99% lower cloud cost** than comparable enterprise AI stacks.
+**Project Delta** is an institutional-grade, multi-agent market intelligence and decision-support platform. By combining **18 automated data feeds**, **hybrid vector/graph retrieval**, and a **5-seat AI Boardroom** (*Quant, Lawyer, Skeptic, Historian, Judge*), it delivers audited, cross-examined alerts in **~3.5 minutes median (2.4 min fastest)**—turning hours of manual analyst diligence into automated multi-agent conviction while operating at **>99% lower cloud cost** than comparable enterprise AI stacks.
 
 ![Cloud Cost](https://img.shields.io/badge/Infrastructure_Cost-%3C%241%2C000%2Fmo-3FD07F?style=flat-square)
-![Time to Alert](https://img.shields.io/badge/Time_to_Alert-%3C15s_Boardroom_SLA-FFA62B?style=flat-square)
+![Time to Alert](https://img.shields.io/badge/Time_to_Alert-~3.5m_Median_(2.4m_Min)-FFA62B?style=flat-square)
 ![Unit Economics](https://img.shields.io/badge/Cloud_Savings-%3E99%25_vs_Legacy-FFA62B?style=flat-square)
 ![Boardroom](https://img.shields.io/badge/AI_Boardroom-5_Independent_Seats-FFA62B?style=flat-square)
 ![IP](https://img.shields.io/badge/Core_IP-Private_Production_Repo-2E2E2E?style=flat-square)
@@ -20,8 +20,8 @@
 
 ## Why Project Delta Wins
 
-### 1. Sub-15-Second Time-to-Alert With Multi-Agent Conviction
-Most AI market tools either trade speed for accuracy (single-LLM hallucinations) or accuracy for speed (minutes-long agent chains). Project Delta routes every signal through a structured **5-Seat AI Boardroom**—**Quant, Lawyer, Skeptic, Historian, and Judge**—enforcing strict p95 latency sub-budgets (`500 ms` hybrid RAG → `6.0 s` Round 1 → `5.0 s` Round 2 → `3.0 s` Judge synthesis) to deliver cross-examined alerts in **under 15 seconds end-to-end**.
+### 1. ~3.5-Minute Time-to-Alert With Full 5-Seat Diligence
+Most AI market tools either trade depth for speed (single-LLM hallucinations) or take hours of manual analyst review. Across **41 logged multi-agent sessions**, Project Delta's **5-Seat AI Boardroom** (**Quant, Lawyer, Skeptic, Historian, and Judge**) completed full triage, hybrid RAG retrieval, adversarial cross-examination, and grounding repair in **144.9 s (2.4 min) minimum** and **212.2 s (3.5 min) median** (`420 s` session deadline)—delivering audited, multi-perspective alerts at machine speed.
 
 ### 2. Capital-Efficient Unit Economics (>$100k/mo Saved)
 Traditional enterprise cloud architectures burn six figures a month before product-market fit. Project Delta's re-architected Azure topology delivers **all 38 microservices and 18 ingest adapters for under $1,000/month**, protecting gross margins and extending runway without sacrificing institutional security.
@@ -37,7 +37,7 @@ Traditional enterprise cloud architectures burn six figures a month before produ
 ### 3. Enterprise-Ready Compliance & Data Moat
 - **Zero External LLM Egress:** All model inference stays inside Azure AI Foundry under Managed Identity, paired with local in-container BGE-M3 embeddings and reranking.
 - **Auditability by Design:** Every decision and authentication event is backed by **7-year immutable WORM storage** and **PostgreSQL Row-Level Security (RLS)** with point-in-time enforcement.
-- **Cost & Latency Guardrails:** Automated daily token-budget caps and strict 15-second end-to-end Boardroom latency sub-budgets.
+- **Cost & Latency Guardrails:** Automated daily token-budget caps, `420 s` hard session deadlines, and Prometheus stage-level latency histograms.
 
 ---
 
